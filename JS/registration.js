@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         
     function setButtonState(condition) {
-        cons button = document.getElementById('button');
+        const button = document.getElementById('button');
         button.disabled = !condition; // If condition is true, button is enabled, else disabled
     }   
 

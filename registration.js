@@ -1,25 +1,34 @@
 document.addEventListener('DOMContentLoaded', function() {
    const fullname = document.getElementById('fullname');
    const username = document.getElementById('username');
-   const gender = document.getElementById('gender');
+   const genderElem = document.getElementById('gender');
+   var gender = document.getElementsByName('gender');
    const email = document.getElementById('email');
    const password = document.getElementById('password');
    const confirm_password = document.getElementById('confirm_password');
    const phonenumber = document.getElementById('phonenumber');
    const form = document.getElementById('form');
-   const error = document.getElementById('error');
+   const ack = document.getElementById("ack");
+   var submit = document.getElementById("Submit");
 
-   form.addEventListener('submit', (e) => {
+   form.addEventListener('input', (e) => {
        e.preventDefault();
        validateInputs();
    });
+//    form.addEventListener('submit', (e) => {
+//         e.preventDefault();
+//         validateInputs();
+//     });
 
    const setError = (element, message) => {
        const inputControl = element.parentElement;
        const errorDisplay = inputControl.querySelector('.error');
+       errorDisplay.style.color = "red";
        errorDisplay.innerText = message;
        inputControl.classList.add('error');
        inputControl.classList.remove('success');
+       submit.disabled = true;
+
    };
 
    const setSuccess = (element) => {
@@ -36,60 +45,88 @@ document.addEventListener('DOMContentLoaded', function() {
    };
 
    const validateInputs = () => {
-       const fullnameValue = fullname.value.trim();
-       const usernameValue = username.value.trim();
-       const genderValue = gender.value.trim();
-       const emailValue = email.value.trim();
-       const passwordValue = password.value.trim();
-       const confirm_passwordValue = confirm_password.value.trim();
-       const phonenumberValue = phonenumber.value.trim();
+       var error = false; 
+       var fullnameValue = fullname.value.trim();
+       var usernameValue = username.value.trim();
+       var genderValue = "";
+       var emailValue = email.value.trim();
+       var passwordValue = password.value;
+       var confirm_passwordValue = confirm_password.value;
+       var phonenumberValue = phonenumber.value.trim();
+
+       for (i = 0; i < gender.length; i++) {
+         if (gender[i].checked) {
+            genderValue = gender[i].value;
+         }
+       }
 
        if (fullnameValue === '') {
            setError(fullname, 'Full Name is required');
+           error = true;
        } else {
            setSuccess(fullname);
        }
 
        if (usernameValue === '') {
            setError(username, 'Username is required');
+           error = true;
        } else {
            setSuccess(username);
        }
 
        if (genderValue === '') {
-           setError(gender, 'Gender is required');
+           setError(genderElem, 'Gender is required');
+           error = true;
        } else {
-           setSuccess(gender);
+           setSuccess(genderElem);
        }
 
        if (emailValue === '') {
            setError(email, 'Email is required');
+           error = true;
        } else if (!isValidEmail(emailValue)) {
            setError(email, 'Provide a valid email address');
+           error = true;
        } else {
            setSuccess(email);
        }
 
        if (passwordValue === '') {
            setError(password, 'Password is required');
+           error = true;
        } else if (passwordValue.length < 8) {
            setError(password, 'Password must be at least 8 characters');
+           error = true;
        } else {
            setSuccess(password);
        }
 
        if (confirm_passwordValue === '') {
            setError(confirm_password, 'Please confirm your password');
-       } else if (confirm_passwordValue !== passwordValue) {
+           error = true;
+       } else if (confirm_passwordValue != passwordValue) {
            setError(confirm_password, "Password doesn't match!");
+           error = true;
        } else {
            setSuccess(confirm_password);
        }
 
        if (phonenumberValue === '') {
            setError(phonenumber, 'Phone number is required');
+           error = true;
        } else {
            setSuccess(phonenumber);
+       }
+
+       if (!ack.checked) {
+        setError(ack, "Please Acknowledge to proceed");
+        error = true;
+       } else {
+        setSuccess(ack);
+       }
+
+       if (error == false) {
+        submit.disabled = false;
        }
    };
 });
