@@ -42,6 +42,15 @@ $db = db_connect();
   }
 ?>
 
+<nav> 
+      <div>
+        <a href="index.php">Home</a>
+        <a href="aboutus.php">About Us</a>
+        <a href="features.php">Features</a>
+        <a href="search.php">Search</a>
+      </div>
+</nav><br>
+
 <br>
 <a class="back-link" href="<?php echo 'index.php'; ?>"> Back to List</a>
 <br>

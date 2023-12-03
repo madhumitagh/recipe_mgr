@@ -9,14 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const phoneNumber = document.getElementById('phonenumber');
     const errorElements = document.querySelectorAll('.error');
         
-        
-    function setButtonState(condition) {
-        cons button = document.getElementById('button');
-        button.disabled = !condition; // If condition is true, button is enabled, else disabled
-    }   
-
-
-
     form.addEventListener('submit', function(e) {
         // Initially assume there are no errors
         let errorOccurred = false;
