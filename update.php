@@ -23,7 +23,7 @@ $result = mysqli_query($db, $sql);
   
   //$id = mysqli_insert_id($db);
   //redirect to show page
-   header("Location: showrecipes.php");
+   header("Location: displayrecipes.php");
   
 
 } else {
