@@ -37,6 +37,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <?php
               require_once('db_credentials.php');
               require_once('database.php');
+              require_once('global.php');
               $db = db_connect();
          ?>
           <?php
@@ -62,12 +63,52 @@ if (session_status() == PHP_SESSION_NONE) {
             <form action="features.php" method="post">
               <div class="search-box">
               <?php
-              if($_SERVER['REQUEST_METHOD'] == 'POST' AND isset($_POST['search'])){
-                $search_val = $_POST['search'];
-              } else {
-                $search_val = "";
+              $search_val = "";
+              $cuisine_val = "";
+              $diet_val = "";
+              if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                if (isset($_POST['search'])){
+                  $search_val = $_POST['search'];
+                }
+                if (isset($_POST['cuisine_type'])){
+                  $cuisine_val = $_POST['cuisine_type'];
+                }
+                if (isset($_POST['diet_type'])){
+                  $diet_val = $_POST['diet_type'];
+                }
               }
               ?>
+                <label for="filter">Filter</label> &nbsp
+                <select id = "cuisine" name="cuisine_type">
+                  <?php
+                  if ($cuisine_val != "") {
+                    echo "<option value='$cuisine_val'>$cuisine_val</option>" ;
+                  } else {
+                    echo "<option value=''>Filter by Cuisine Type</option>" ;
+                  }
+                  foreach ($g_cuisine_types as $val) {
+                    if ($cuisine_val == '' or $cuisine_val != $val) {
+                      echo "<option value='$val'>$val</option>";
+                    }
+                  }
+                  ?>
+                </select>
+                &nbsp
+                <select id = "diet" name="diet_type">
+                <?php
+                  if ($diet_val != "") {
+                    echo "<option value='$diet_val'>$diet_val</option>" ;
+                  } else {
+                    echo "<option value=''>Filter by Diet Type</option>" ;
+                  }
+                  foreach ($g_diet_types as $val) {
+                    if ($diet_val == '' or $diet_val != $val) {
+                      echo "<option value='$val'>$val</option>";
+                    }
+                  }
+                  ?>
+                </select>
+                &nbsp
                 <input type="text" name="search" class="search-input" placeholder="Search"
                  value ="<?php echo $search_val; ?>">
                   <button type="submit" class="search-button">Search</button>
@@ -77,12 +118,34 @@ if (session_status() == PHP_SESSION_NONE) {
             <table class="list">
 
         <?php 
-              if($_SERVER['REQUEST_METHOD'] == 'POST' AND isset($_POST['search'])){
-                $search=$_POST['search'];
-                $sql="Select * from recipes where ingredients like '%$search%'
-                or dietary_preferences like '%$search%' or cuisine_type like '%$search%'";
-              } else {
-                $sql = "SELECT * FROM recipes ";
+              $sql = "SELECT * FROM recipes";
+              if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $cuisine = '';
+                if (isset($_POST['cuisine_type']) AND $_POST['cuisine_type'] != '') {
+                  $cuisine = $_POST['cuisine_type'];
+                  $sql = $sql . " WHERE cuisine_type='".$cuisine."'";
+                }
+
+                $diet = '';
+                if (isset($_POST['diet_type']) AND $_POST['diet_type'] != '') {
+                  $diet = $_POST['diet_type'];
+                  if($cuisine != '') {
+                    $sql = $sql . " and ";
+                  } else {
+                    $sql = $sql . " WHERE ";
+                  }
+                  $sql = $sql . " dietary_preferences='".$diet."'";
+                }
+
+                if (isset($_POST['search']) AND $_POST['search'] != ''){
+                  $search=$_POST['search'];
+                  if ($diet != '' or $cuisine != '') {
+                    $sql = $sql . " and ";
+                  } else {
+                    $sql = $sql . " WHERE ";
+                  }
+                  $sql=$sql . " (ingredients like '%$search%'or dietary_preferences like '%$search%' or cuisine_type like '%$search%')";
+                }
               }
               //echo $sql;
               $result_set = mysqli_query($db,$sql);
