@@ -13,3 +13,12 @@ h3 {
     text-align: center;
     color: #120d0d; /* A shade lighter than the subheading */
 }
+
+body {
+
+    background-image: url("../image/aboutus.jpg");
+    background-blend-mode: lighten;
+    background-size: cover; /* This scales the image to fit the container */
+    background-repeat: no-repeat; /* This prevents the image from repeating */
+    background-position: center; /* This centers the image in the container */
+}

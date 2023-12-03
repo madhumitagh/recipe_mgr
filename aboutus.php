@@ -17,7 +17,8 @@
      
 
 
-   <link rel="stylesheet" media="all" href="<?php echo 'recipe.css'; ?>" />      
+   <link rel="stylesheet" media="all" href="<?php echo 'CSS/recipe.css'; ?>" />
+   <link rel="stylesheet" media="all" href="<?php echo 'CSS/aboutus.css'; ?>" />     
 
 
     <title>About US</title>      
@@ -46,18 +47,18 @@
 
 
 <div>
-<h1> Welcome to Masterchef Recipes! </h>
+<h2> Welcome to Tempting Recipes! </h2>
 </div>
 <br>
 <br>
-<div>
-<p><h2> At Masterchef Recipes, we believe that cooking should be a joyful and straightforward experience for everyone.</h2></p>
-<p><h2>Our online recipe manager is designed to make your culinary journey easier, more organized, and infinitely more enjoyable.</h2></p>
-<p><h2>Whether you are a beginner cook or a seasoned chef, our platform is tailored to meet your needs.</h2></p>
+<div class= "container">
+<p><h3> At Tempting Recipes, we believe that cooking should be a joyful and straightforward experience for everyone.</h3></p>
+<p><h3>Our online recipe manager is designed to make your culinary journey easier, more organized, and infinitely more enjoyable.</h3></p>
+<p><h3>Whether you are a beginner cook or a seasoned chef, our platform is tailored to meet your needs.</h3></p>
 </div>
 <b>
 <br>
-<h1>Enjoy your cooking...</h1>
+<h2>Enjoy your cooking...</h2>
 
   
    
