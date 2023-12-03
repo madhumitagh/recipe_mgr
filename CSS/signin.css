@@ -1,0 +1,72 @@
+
+
+/* Flexbox to center the .container horizontally and vertically */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+/* Panel styles for a clean and centered look */
+.panel {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Fixed width, you can change it as per your requirement */
+    margin: 0 auto; /* Center the panel */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Spacing and styling for form elements */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Full width for form inputs */
+.form-control {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px;
+    margin-bottom: 20px; /* Space between inputs */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Styling for the submit button */
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Styling for the back link and registration link */
+.back-link, a {
+    color: #007bff;
+    text-decoration: none;
+    display: block; /* Make the link fill the line */
+    margin-bottom: 15px; /* Spacing below the link */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer positioning at the bottom */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-top: 1px solid #ddd;
+}

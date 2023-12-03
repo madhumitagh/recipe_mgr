@@ -1,0 +1,15 @@
+
+
+/* Subheading styles */
+h2 {
+    font-size: 3.2em; /* Smaller font size than the main heading */
+    text-align: center;
+    color: #0e0202; /* A shade lighter than the main heading */
+}
+
+/* Additional information text style */
+h3 {
+    font-size: 2.8em; /* Smaller font size than the subheading */
+    text-align: center;
+    color: #120d0d; /* A shade lighter than the subheading */
+}

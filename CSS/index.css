@@ -1,0 +1,78 @@
+
+body {
+    margin: 0;
+    font-family: system-ui;
+    background-color: #f4f4f46a; /* A light grey background */
+    background-image: url("../image/background.jpg");
+    background-blend-mode: multiply;
+    /*color: rgb(245, 181, 5); /* Dark grey color for text */
+    line-height: 1.6;
+}
+
+header h1 {
+    text-align: center;
+}
+
+/* Main heading styles */
+h1 {
+    font-size: 4.5em; /* Bigger font size for main heading */
+    text-align: center;
+    color: rgb(242, 235, 235)cec; /* Dark grey color for the heading */
+    padding: 20px 0; /* Space above and below the heading */
+}
+
+/* Subheading styles */
+h2 {
+    font-size: 3.2em; /* Smaller font size than the main heading */
+    text-align: center;
+    color: #0e0202; /* A shade lighter than the main heading */
+}
+
+/* Additional information text style */
+h3 {
+    font-size: 2.8em; /* Smaller font size than the subheading */
+    text-align: center;
+    color: #120d0d; /* A shade lighter than the subheading */
+}
+
+/* Button styles */
+button {
+    display: block;
+    width: 200px; /* Fixed width */
+    margin: 20px auto; /* Center the buttons with automatic horizontal margins */
+    padding: 10px; /* Some padding inside the buttons */
+    background-color: #5cb85c; /* A green background color */
+    color: #fff; /* White text color */
+    border: none;
+    cursor: pointer;
+    font-size: 18px; /* Larger font size for buttons */
+    border-radius: 5px; /* Rounded corners for the buttons */
+}
+
+button:hover {
+    background-color: #449d44; /* A darker green for hover state */
+}
+
+/* Style for the sign-in button to differentiate it from join free */
+#signButton {
+    background-color: #337ab7; /* A blue background color */
+}
+
+#signButton:hover {
+    background-color: #286090; /* A darker blue for hover state */
+}
+
+/* Link to sign in page */
+.sign-in-link {
+    text-align: center; /* Center the sign in link */
+    display: block; /* Make the link a block to center it */
+    margin-top: 15px; /* Space above the link */
+    font-size: 16px; /* Font size for the link */
+    color: #337ab7; /* Color similar to the sign-in button */
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.sign-in-link:hover {
+    text-decoration: underline; /* Underline on hover for the link */
+}
+

@@ -6,8 +6,10 @@ if (session_status() == PHP_SESSION_NONE) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sign in</title>
+    <title>Form</title>
     <link rel="stylesheet" type="trxt/css" href="<?php echo 'recipe.css'; ?>" /> 
+    <link rel="stylesheet" type="trxt/css" href="<?php echo 'CSS/signin.css'; ?>" /> 
+    <script defer src="JS/signin.js"></script>
 </head>
 <body>
 
@@ -52,32 +54,38 @@ $db = db_connect();
                 </div>
 
                 <div class="panel-body">
-                    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
-                        <div class="form-group">
+                    <div id="error"></div>
+                    <form id="form" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+                       
                             <label for="username">Username</label>
                             <input type="text" class="form-control" id="username" name="username" required />
                         </div>
 
                         <br><br>
-                        <div class="form-group">
+                        <div>
                             <label for="password">Password</label>
-                            <input type="text" class="form-control" id="password" name="password" required />
+                            <input type="password" class="form-control" id="password" name="password" required />
                         </div>
                         <br><br>
 
                          <div>
-                            <form method="post">
-                                <input id="text" type="submit" value="Sign In"><br><br>
+                            
+                         <button type="submit" class="btn btn-primary" id="button">Sign In</button><br><br>
                                 
                                 <br>
                                 <a href="registration.php">Don't have an account? Click to SignUp</a><br><br>
                             </form>
+                    
                         </div>
-                    </form>
-                </div>
+                        
+</div>
+                
+                
+<?php include ("footer.php"); ?>
 </body> 
 </html>
 
+   
 
 
     
