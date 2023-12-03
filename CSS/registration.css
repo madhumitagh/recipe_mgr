@@ -82,6 +82,12 @@ body {
     text-decoration: underline;
 }
 
+footer {
+    text-align: center;
+    background: rgb(245, 181, 5); /* Dark grey background for contrast */
+    padding: 0 ;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .panel {

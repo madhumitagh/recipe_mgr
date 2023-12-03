@@ -5,8 +5,8 @@ body {
     background-color: #f4f4f46a; /* A light grey background */
     background-image: url("../image/background.jpg");
     background-blend-mode: multiply;
-    /*color: rgb(245, 181, 5); /* Dark grey color for text */
-    line-height: 1.6;
+    background-blend-mode: lighten;
+ 
 }
 
 header h1 {
@@ -76,17 +76,8 @@ button:hover {
     text-decoration: underline; /* Underline on hover for the link */
 }
 
-.footer {
-  
-    background-color: rgb(221, 216, 141);
-  
-    color: #fff;
-  
+footer {
     text-align: center;
-  
-    padding: 1rem 1rem;
-
-    margin-top: 30px;
-  
-  }
-  
+    background: rgb(245, 181, 5); /* Dark grey background for contrast */
+    padding: 0 ;
+}

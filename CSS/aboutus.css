@@ -22,3 +22,9 @@ body {
     background-repeat: no-repeat; /* This prevents the image from repeating */
     background-position: center; /* This centers the image in the container */
 }
+
+footer {
+    text-align: center;
+    background: rgb(245, 181, 5); /* Dark grey background for contrast */
+    padding: 0 ;
+}
