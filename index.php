@@ -15,7 +15,7 @@
         Purpose: This is the home page and it displays the various otions to choose from. 
         -->
         
-     <link rel="stylesheet" href="<?php echo 'recipe.css'; ?>"/>      
+     <link rel="stylesheet" href="<?php echo 'CSS/index.css'; ?>"/>      
   </head>
   <body>
   <?php include ("header.php") ?>
@@ -53,9 +53,10 @@
             <form action="signin.php" method="get">
             <button type="submit" id="signButton">SIGN IN</button>
             </form><br><br>
+ </body>
+</html>
+
 
 <?php include ("footer.php"); ?>
-</body>
-</html>
 
   

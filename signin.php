@@ -7,8 +7,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <html>
 <head>
     <title>Form</title>
-    <link rel="stylesheet" type="trxt/css" href="<?php echo 'recipe.css'; ?>" /> 
-    <link rel="stylesheet" type="trxt/css" href="<?php echo 'CSS/signin.css'; ?>" /> 
+    <link rel="stylesheet" type="text/css" href="<?php echo 'CSS/signin.css'; ?>" /> 
     <script defer src="JS/signin.js"></script>
 </head>
 <body>
@@ -88,12 +87,12 @@ $db = db_connect();
                         </div>
                         
 </div>
-                
-                
+<br>
+<br>  
+           
 <?php include ("footer.php"); ?>
 </body> 
 </html>
-
    
 
 

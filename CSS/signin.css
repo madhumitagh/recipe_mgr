@@ -61,7 +61,7 @@ a:hover {
 }
 
 /* Footer positioning at the bottom */
-footer {
+/* footer {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -69,4 +69,19 @@ footer {
     padding: 10px;
     background-color: #f4f4f4;
     border-top: 1px solid #ddd;
-}
+} */
+
+footer {
+  
+    background-color: rgb(221, 216, 141);
+  
+    color: #fff;
+  
+    text-align: center;
+  
+    padding: 1rem 1rem;
+
+    margin-top: 30px;
+  
+  }
+  

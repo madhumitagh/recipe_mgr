@@ -9,7 +9,7 @@
     <meta name="author" content="Madhumita Ghosh and Pooja Rishal">
     <title>Form</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="recipe.css">
+    <link rel="stylesheet" type="text/css" href="css/registration.css">
     <script src="registration.js" defer></script>
 </head>
 <body>
