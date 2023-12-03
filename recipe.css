@@ -1,0 +1,88 @@
+
+
+/* Apply a reset to remove default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui;
+    background-color: #f4f4f46a; /* A light grey background */
+   
+    /*background-size: cover;*/
+   /*background-blend-mode: multiply;*/
+    /*color: rgb(245, 181, 5); /* Dark grey color for text */
+    line-height: 1.6;
+}
+
+
+/* Header styles */
+header {
+    background: #170909; /* Darker grey background for the header */
+    color: rgb(226, 196, 25);
+    padding-top: 2px;
+    min-height: 20px;
+    border-bottom: rgb(71, 193, 92) 3px solid; /* Tan bottom border */
+}
+
+header h1 {
+    text-align: center;
+}
+
+/* Main heading styles */
+h1 {
+    font-size: 4.5em; /* Bigger font size for main heading */
+    text-align: center;
+    color: rgb(242, 235, 235)cec; /* Dark grey color for the heading */
+    padding: 20px 0; /* Space above and below the heading */
+}
+
+/* Center the navigation */
+nav {
+    text-align: center;
+    background: rgb(245, 181, 5); /* Dark grey background for contrast */
+    padding: 0 ;
+}
+
+nav a {
+    color: #fef1f1; /* White color for links */
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 22px; /* Slightly larger font size for navigation links */
+}
+
+nav a:hover {
+    color: rgb(54, 8, 192); /* Tan color for hover state */
+}
+
+
+
+
+/*.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-input {
+    border: none;
+    padding: 10px;
+    margin-left: 10px;
+    outline: none;
+    flex: 1;
+}
+
+.search-button {
+    background: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.search-button .fas {
+    color: #333;
+}*/
