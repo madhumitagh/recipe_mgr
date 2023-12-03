@@ -19,6 +19,7 @@ if (!isset($_SESSION['username'])) {
 <?php
 require_once('db_credentials.php');
 require_once('database.php');
+require_once('global.php');
 $db = db_connect();
 
   if (isset($_POST["submit"]) AND isset($_POST['dish_name'])) {
@@ -33,7 +34,9 @@ $db = db_connect();
  $cook = $_POST['cook_time'] ;
  $instruction = $_POST['instruction'];
  $image = '';
- if (count($_FILES) > 0) {
+ if (count($_FILES) > 0 AND isset($_FILES['image']) AND isset($_FILES['image']['tmp_name']) AND
+     $_FILES['image']['tmp_name'] != '' AND
+     getimagesize($_FILES['image']['tmp_name']) > 0) {
   $image = base64_encode(file_get_contents($_FILES['image']['tmp_name']));
   $image_type = $_FILES['image']['type'];
   if (!substr($image_type, 0, 5)) {
@@ -91,11 +94,11 @@ if ($result = mysqli_query($db, $sql)) {
         <dd>
           <select id = "cuisine" name="cuisine_type">
                 <option value="">--Please select an option--</option>
-                <option value="indian">Indian</option>
-                <option value="mexican">Mexican</option>
-                <option value="nepali">Nepalese</option>
-                <option value="chinese">Chinese</option>
-                <option value="others">Others</option>
+                <?php
+                foreach ($g_cuisine_types as $val) {
+                  echo "<option value='$val'>$val</option>";
+                }
+                ?>
           </select>
         </dd>
       </dl>
@@ -105,10 +108,11 @@ if ($result = mysqli_query($db, $sql)) {
         <dd>
           <select id="diet" name="dietary_preferences">
             <option value="">--Please choose an option--</option>
-            <option value="Veg">Veg</option>
-            <option value="NonVeg">NonVeg</option>
-            <option value="GlutenFree">GlutenFree</option>
-            <option value="Vegan">Egg</option>
+            <?php
+                foreach ($g_diet_types as $val) {
+                  echo "<option value='$val'>$val</option>";
+                }
+              ?>
           </select>
         </dd>
       </dl>

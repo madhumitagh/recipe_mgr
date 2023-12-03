@@ -13,6 +13,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <?php
 require_once('db_credentials.php');
 require_once('database.php');
+require_once('global.php');
 include "header.php" ;
 $db = db_connect();
 ?>
@@ -106,28 +107,35 @@ mysqli_free_result($result_set);
 
         <dl>
         <dt>Cuisine Type</dt>
-        <dd><input type="text" name="cuisine_type"  value ="<?php echo "$cuisine"; ?>"/></dd>
+        <dd>
+        <select id = "cuisine" name="cuisine_type">
+                <?php 
+                echo "<option value='$cuisine'>$cuisine</option>";
+                foreach ($g_cuisine_types as $val) {
+                  if ($val != $cuisine) {
+                    echo "<option value='$val'>$val</option>";
+                  }
+                }
+                ?>
+          </select>
         </dd>
         </dl>
 
         <dl>
         <dt>Diet Preference</dt>
-        <dd><input type="text" name="dietary_preferences"  value ="<?php echo "$diet"; ?>"/></dd>
+        <dd>
+        <select id = "diet" name="dietary_preferences">
+                <?php 
+                echo "<option value='$diet'>$diet</option>";
+                foreach ($g_diet_types as $val) {
+                  if ($val != $diet) {
+                    echo "<option value='$val'>$val</option>";
+                  }
+                }
+                ?>
+          </select>
         </dd>
         </dl>
-             <dl>
-        <dt>dietary_preference</dt>
-        <dd>
-        <select id="diet" name="dietary_preferences">
-        <option value="<?php echo "$diet"; ?>"><?php echo "$diet"; ?></option>
-        <option value="Veg">Veg</option>
-        <option value="NonVeg">NonVeg</option>
-        <option value="GlutenFree">GlutenFree</option>
-        <option value="Egg">Egg</option>
-       </select>
-        </dd>
-      </dl>
-
         <dl>
         <dt>Time</dt>
         <dd><input type="text" name="cook_time"  value ="<?php echo "$cook"; ?>" /></dd>

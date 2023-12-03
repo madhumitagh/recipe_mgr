@@ -52,8 +52,6 @@ if (session_status() == PHP_SESSION_NONE) {
                 <a href="features.php">Features</a>
                 <a href="search.php">Search</a>
 
- 
-
                 <?php
                  if (isset($_SESSION["username"])) {
                   echo "<a href=\"logout.php\">Logout</a>";
@@ -63,8 +61,15 @@ if (session_status() == PHP_SESSION_NONE) {
             </nav><br>
             <form action="features.php" method="post">
               <div class="search-box">
+              <?php
+              if($_SERVER['REQUEST_METHOD'] == 'POST' AND isset($_POST['search'])){
+                $search_val = $_POST['search'];
+              } else {
+                $search_val = "";
+              }
+              ?>
                 <input type="text" name="search" class="search-input" placeholder="Search"
-                 value ="<?php echo $_POST['search']; ?>">
+                 value ="<?php echo $search_val; ?>">
                   <button type="submit" class="search-button">Search</button>
               </div>
             </form>
