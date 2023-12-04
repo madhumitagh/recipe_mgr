@@ -1,0 +1,33 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+  
+  th {
+    background-color: #ddd;
+    color: #333;
+  }
+  
+  td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    body {
+      padding: 5px;
+    }
+    
+    table {
+      font-size: 0.8em;
+    }
+  }
