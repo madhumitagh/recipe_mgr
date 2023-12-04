@@ -45,16 +45,12 @@ $db = db_connect();
     <a href="index.php">Home</a>
     <a href="aboutus.php">About Us</a>
     <a href="features.php">Features</a>
-    <?php
-      if (isset($_SESSION["username"])) {
-        echo "<a href=\"logout.php\">Logout</a>";
-      } 
-    ?>
   </div>
 </nav>
 <br>
 <a class="back-link" href="<?php echo 'index.php'; ?>"> Back to List</a>
-<h2>Sign In<h2>
+<h3>Enter your Username and Password<h3>
+<br>
 <div class="container">
   <div class="row col-md-6 col-md-offset-3">
     <div class="panel panel-primary">

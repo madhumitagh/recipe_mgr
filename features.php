@@ -163,16 +163,26 @@ if (session_status() == PHP_SESSION_NONE) {
 
                 <?php
                   while($results = mysqli_fetch_assoc($result_set))  {
+                    $ingred = $results['ingredients'];
+                    if (strlen($ingred) > 50) {
+                      $ingred = substr($ingred,0, 50);
+                      $ingred = $ingred . "...";
+                    }
+                    $instruct = $results['instruction'];
+                    if (strlen($instruct) > 50) {
+                      $instruct = substr($instruct,0, 50);
+                      $instruct = $instruct . "...";
+                    }
                 ?>
                   <tr>
                       <td><?php echo $results['username']; ?></td>
                       <td><?php echo $results['dish_name']; ?></td>
-                      <td><?php echo $results['ingredients']; ?></td>
+                      <td><?php echo $ingred; ?></td>
                       <td><?php echo $results['cuisine_type'] ; ?></td>
                       <td><?php echo $results['dietary_preferences']; ?></td>
                       <td><?php echo $results['cook_time'] ; ?></td>
-                      <td><?php echo $results['instruction'] ; ?></td>
-                      <td><img src="<?php echo 'data:image;base64,'.$results['image_path'] ?>" width=10%/></td>
+                      <td><?php echo $instruct; ?></td>
+                      <td><img src="<?php echo 'data:image;base64,'.$results['image_path'] ?>" width=40%/></td>
                       <td><a class="action" href="<?php echo "displayrecipes.php?id=" . $results['id']; ?>">Display</a></td>
                       <?php
                        if (isset($_SESSION['username']) AND $results['username'] == $_SESSION['username']) {
