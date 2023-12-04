@@ -1,3 +1,8 @@
+/* Subheading styles */
+h2 {
+    text-align: center;
+    color: #0e0202; /* A shade lighter than the main heading */
+}
 
 
 /* Flexbox to center the .container horizontally and vertically */
@@ -55,25 +60,6 @@ input[type="submit"]:hover {
     display: block; /* Make the link fill the line */
     margin-bottom: 15px; /* Spacing below the link */
 }
-
-a:hover {
-    text-decoration: underline;
-}
-
-nav li {
-  
-    display: inline;
-    margin-right: 1rem;
- }
-  
-   nav a {
-  
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 1em;
-    color:blueviolet;
-   
- }
 
 
 footer {
