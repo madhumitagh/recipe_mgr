@@ -10,6 +10,6 @@
   <body>
   <header>
     <div>
-    <i><h1>Tempting<img src="image/delightful-doughnut.jpg" alt="delightful-doughnut" style="width: 3%">Recipes</h1></i>
+    <i><h1>Tempting<img src="image/delightful-doughnut.jpg" alt="delightful-doughnut" style="width: 5%">Recipes</h1></i>
     </div>
   </header>

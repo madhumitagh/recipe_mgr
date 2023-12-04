@@ -38,7 +38,7 @@
       </div>
     </nav>
 
-      <div><h2>Be your own MasterChef</h2></div><br>
+      <div><h2>Be your own MasterChef<img src="image/hat.jpg" style="width:7%">!</h2></div><br>
         <div>
             <p><h2>Your personal recipe library</h2></p><br>
             <p><h3>A free recipe keeper</h3></p><br>
