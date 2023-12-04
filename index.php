@@ -36,12 +36,12 @@
         <a href="aboutus.php">About Us</a>
         <a href="features.php">Features</a>
       </div>
-    </nav><br>
+    </nav>
 
-      <div><h1>Be your own MasterChef</h1></div><br><br>
+      <div><h2>Be your own MasterChef</h2></div><br>
         <div>
-            <p><h2>Your personal recipe library</h2></p><br><br>
-            <p><h3>A free recipe keeper</h3></p><br><br>
+            <p><h2>Your personal recipe library</h2></p><br>
+            <p><h3>A free recipe keeper</h3></p><br>
         </div>
 
         <!-- Join Free Button -->

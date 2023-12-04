@@ -13,6 +13,6 @@
     <h1>Tempting<img src="image/delightful-doughnut.jpg" alt="delightful-doughnut" style="width: 3%">Recipes</h1>    
     </div>
   </header>
-  <nav>
+  <!-- <nav>
       <a href="<?php echo 'index.php'; ?>"></a>
-  </nav>
+  </nav> -->

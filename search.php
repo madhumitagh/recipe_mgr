@@ -14,7 +14,6 @@
         Purpose: This is the home page and it displays the various otions to choose from. 
         -->
     <link rel="stylesheet" media="all" href="<?php echo 'CSS/recipe.css'; ?>" /> 
-    <link rel="stylesheet" media="all" href="<?php echo 'process_selection.php'; ?>" /> 
     <script src="search.js" defer></script>
     <title>Search</title>      
 </head>

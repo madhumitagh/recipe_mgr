@@ -64,7 +64,6 @@ if ($result = mysqli_query($db, $sql)) {
                 <a href="index.php">Home</a>
                 <a href="aboutus.php">About Us</a>
                 <a href="features.php">Features</a>
-                <a href="search.php">Search</a>
                 <?php
                  if (isset($_SESSION["username"])) {
                   echo "<a href=\"logout.php\">Logout</a>";

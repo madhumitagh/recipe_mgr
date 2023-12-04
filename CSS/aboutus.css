@@ -20,10 +20,13 @@ body {
     background-size: cover; /* This scales the image to fit the container */
     background-repeat: no-repeat; /* This prevents the image from repeating */
     background-position: center; /* This centers the image in the container */
+    text-align: center;
 }
 
 footer {
+    background-color: rgb(219, 166, 30);
+    color: #0b0b0b;
     text-align: center;
-    background: rgb(245, 181, 5); /* Dark grey background for contrast */
-    padding: 0 ;
-}
+    padding: 1rem 1rem;
+    margin-top: 50px;
+  }
