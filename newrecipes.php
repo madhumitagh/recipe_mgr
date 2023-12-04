@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" media="all" href="style.css" />
+<link rel="stylesheet" media="all" href="Css/recipe.css" />
 </head>
 <body>
   

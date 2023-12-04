@@ -19,7 +19,7 @@ if (session_status() == PHP_SESSION_NONE) {
         Purpose: This is the home page and it displays the various otions to choose from. 
         -->
         
-      <link rel="stylesheet" media="all" href="<?php echo 'recipe.css'; ?>" />  
+      <link rel="stylesheet" media="all" href="<?php echo 'CSS/recipe.css'; ?>" />  
       <link rel="stylesheet" media="all" href="<?php echo 'CSS/features.css'; ?>" />     
       <script src="registration.js" defer></script> 
       <title>Features</title>  

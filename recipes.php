@@ -17,7 +17,7 @@
         -->
         
      
-   <link rel="stylesheet" href="<?php echo 'recipe.css'; ?>"/>      
+   <link rel="stylesheet" href="<?php echo 'CSS/recipe.css'; ?>"/>      
    
   
   </head>

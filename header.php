@@ -4,7 +4,7 @@
   <head>
     <title>Tempting Recipes</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" media="all" href="<?php echo 'recipe.css'; ?>" />
+    <link rel="stylesheet" media="all" href="<?php echo 'CSS/recipe.css'; ?>" />
   </head>
 
   <body>
