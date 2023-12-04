@@ -34,7 +34,6 @@
         <a href="index.php">Home</a>
         <a href="aboutus.php">About Us</a>
         <a href="features.php">Features</a>
-        <a href="search.php">Search</a>
       </div>
     </nav><br>
 

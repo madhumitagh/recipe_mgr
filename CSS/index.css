@@ -3,10 +3,12 @@ body {
     margin: 0;
     font-family: system-ui;
     background-color: #f4f4f46a; /* A light grey background */
-    background-image: url("../image/background.jpg");
-    background-blend-mode: multiply;
+
+    background-size: cover;
+    background-image: url("../image/pexels-engin-akyurt-1437811.jpg");
     background-blend-mode: lighten;
- 
+    /*color: rgb(245, 181, 5); /* Dark grey color for text */
+    line-height: 1.6;
 }
 
 header h1 {
@@ -32,7 +34,7 @@ h2 {
 h3 {
     font-size: 2.8em; /* Smaller font size than the subheading */
     text-align: center;
-    color: #120d0d; /* A shade lighter than the subheading */
+    color: rgb(48, 12, 193); /* A shade lighter than the subheading */
 }
 
 /* Button styles */
@@ -77,7 +79,15 @@ button:hover {
 }
 
 footer {
+  
+    background-color: rgb(219, 166, 30);
+  
+    color: #fff;
+  
     text-align: center;
-    background: rgb(245, 181, 5); /* Dark grey background for contrast */
-    padding: 0 ;
-}
+  
+    padding: 1rem 1rem;
+
+    margin-top: 30px;
+  
+  }

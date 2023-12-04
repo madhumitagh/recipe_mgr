@@ -15,7 +15,6 @@ h3 {
 }
 
 body {
-
     background-image: url("../image/aboutus.jpg");
     background-blend-mode: lighten;
     background-size: cover; /* This scales the image to fit the container */
