@@ -7,15 +7,10 @@ if (session_status() == PHP_SESSION_NONE) {
 <html>
 <head>
     <title>Form</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo 'CSS/recipe.css'; ?>" /> 
     <link rel="stylesheet" type="text/css" href="<?php echo 'CSS/signin.css'; ?>" /> 
-    
-
     <script defer src="JS/signin.js"></script>
 </head>
 <body>
-
-
 <?php
 require_once('db_credentials.php');
 require_once('database.php');
@@ -49,54 +44,44 @@ $db = db_connect();
         <a href="index.php">Home</a>
         <a href="aboutus.php">About Us</a>
         <a href="features.php">Features</a>
-        <a href="search.php">Search</a>
       </div>
-</nav><br>
-
+</nav>
+<br>
 <br>
 <a class="back-link" href="<?php echo 'index.php'; ?>"> Back to List</a>
 <br>
-<h2>Enter your username and password<h2>
+<h3>Enter your username and password<h3>
 <br>
 <div class="container">
         <div class="row col-md-6 col-md-offset-3">
             <div class="panel panel-primary">
-                <div class="panel-heading text-center"> 
-                </div>
+                <div class="panel-heading text-center"></div>
+                    <div class="panel-body">
+                        <div id="error"></div>
+                        <form id="form" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+                            <div>      
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" required />
+                            </div>
+                            <br>
+                            <br>
 
-                <div class="panel-body">
-                    <div id="error"></div>
-            <form id="form" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
-
-                <div>      
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" name="username" required />
-                </div><br><br>
-
-
-                <div>
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password" required />
-                </div><br><br>
-                <div>
-                            
-                <button type="submit" class="btn btn-primary" id="button">Sign In</button><br><br><br>
-
-                <a href="registration.php">Don't have an account? Click to SignUp</a><br><br>
-            </form>
+                            <div>
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required />
+                            </div>
+                            <br>
+                            <br>
+                            <button type="submit" class="btn btn-primary" id="button">Sign In</button>
+                        </form>
+                    </div>
+                    <br>
+                    <a href="registration.php">Don't have an account? Click to SignUp</a><br><br>
+            
             </div>
                 
         </div>          
-</div>     
-
-
-
-
-        </div>
-                            
-        </div>
-                        
-</div>
+</div>           
 <br>
 <br>  
            

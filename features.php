@@ -154,9 +154,9 @@ if (session_status() == PHP_SESSION_NONE) {
                   <th>User</th>
                   <th>Name</th>
                   <th>Ingredients</th>
-                  <th>Type</th>
-                  <th>Diet Preference</th>
-                  <th>Cook Time</th>
+                  <th>CuisineType</th>
+                  <th>DietPreference</th>
+                  <th>CookTime</th>
                   <th>Instruction</th>
                   <th>Image</th>
                 </tr>
