@@ -6,15 +6,15 @@ if (session_status() == PHP_SESSION_NONE) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Form</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo 'CSS/signin.css'; ?>" /> 
+    <title>Sign In</title>
+    <link rel="stylesheet" type="text/css" href="CSS/signin.css"/> 
     <script defer src="JS/signin.js"></script>
 </head>
 <body>
 <?php
 require_once('db_credentials.php');
 require_once('database.php');
-include "header.php" ;
+include "header.php";
 $db = db_connect();
 
   // Handle form values sent by new.php
@@ -39,49 +39,48 @@ $db = db_connect();
   }
 ?>
 
-<nav> 
-      <div>
-        <a href="index.php">Home</a>
-        <a href="aboutus.php">About Us</a>
-        <a href="features.php">Features</a>
-      </div>
+
+<nav>
+  <div>
+    <a href="index.php">Home</a>
+    <a href="aboutus.php">About Us</a>
+    <a href="features.php">Features</a>
+    <?php
+      if (isset($_SESSION["username"])) {
+        echo "<a href=\"logout.php\">Logout</a>";
+      } 
+    ?>
+  </div>
 </nav>
 <br>
-<br>
 <a class="back-link" href="<?php echo 'index.php'; ?>"> Back to List</a>
-<br>
-<h3>Enter your username and password<h3>
-<br>
+<h2>Sign In<h2>
 <div class="container">
-        <div class="row col-md-6 col-md-offset-3">
-            <div class="panel panel-primary">
-                <div class="panel-heading text-center"></div>
-                    <div class="panel-body">
-                        <div id="error"></div>
-                        <form id="form" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
-                            <div>      
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" name="username" required />
-                            </div>
-                            <br>
-                            <br>
-
-                            <div>
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" required />
-                            </div>
-                            <br>
-                            <br>
-                            <button type="submit" class="btn btn-primary" id="button">Sign In</button>
-                        </form>
-                    </div>
-                    <br>
-                    <a href="registration.php">Don't have an account? Click to SignUp</a><br><br>
-            
+  <div class="row col-md-6 col-md-offset-3">
+    <div class="panel panel-primary">
+      <div class="panel-heading text-center"></div>
+      <div class="panel-body">
+         <div id="error"></div>
+         <form id="form" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+            <div>      
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" name="username" required />
             </div>
-                
+            <div>
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" name="password" required />
+            </div>
+            <div>                
+              <button type="submit" class="btn btn-primary" id="button">Sign In</button><br>
+                <a href="registration.php">Don't have an account? Click to SignUp</a>
+            </div>
+          </form>    
         </div>          
-</div>           
+
+      </div>     
+    </div>                          
+  </div>                        
+</div>
 <br>
 <br>  
            

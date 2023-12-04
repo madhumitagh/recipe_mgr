@@ -1,3 +1,8 @@
+/* Subheading styles */
+h2 {
+    text-align: center;
+    color: #0e0202; /* A shade lighter than the main heading */
+}
 
 
 /* Flexbox to center the .container horizontally and vertically */
@@ -78,8 +83,7 @@ nav li {
  body{
     text-align: center;
  }
-
-
+ 
 footer {
     background-color: rgb(219, 166, 30);
     color: #fff;
