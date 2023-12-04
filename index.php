@@ -15,7 +15,8 @@
         Purpose: This is the home page and it displays the various otions to choose from. 
         -->
         
-     <link rel="stylesheet" href="<?php echo 'CSS/index.css'; ?>"/>      
+     <link rel="stylesheet" href="<?php echo 'CSS/recipe.css'; ?>"/>   
+     <link rel="stylesheet" href="<?php echo 'CSS/index.css'; ?>"/>     
   </head>
   <body>
   <?php include ("header.php") ?>

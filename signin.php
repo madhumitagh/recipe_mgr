@@ -7,7 +7,10 @@ if (session_status() == PHP_SESSION_NONE) {
 <html>
 <head>
     <title>Form</title>
+    <link rel="stylesheet" type="text/css" href="<?php echo 'CSS/recipe.css'; ?>" /> 
     <link rel="stylesheet" type="text/css" href="<?php echo 'CSS/signin.css'; ?>" /> 
+    
+
     <script defer src="JS/signin.js"></script>
 </head>
 <body>
@@ -63,28 +66,35 @@ $db = db_connect();
 
                 <div class="panel-body">
                     <div id="error"></div>
-                    <form id="form" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
-                       
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" name="username" required />
-                        </div>
+            <form id="form" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
 
-                        <br><br>
-                        <div>
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" required />
-                        </div>
-                        <br><br>
+                <div>      
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required />
+                </div><br><br>
 
-                         <div>
+
+                <div>
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required />
+                </div><br><br>
+                <div>
                             
-                         <button type="submit" class="btn btn-primary" id="button">Sign In</button><br><br>
-                                
-                                <br>
-                                <a href="registration.php">Don't have an account? Click to SignUp</a><br><br>
-                            </form>
-                    
-                        </div>
+                <button type="submit" class="btn btn-primary" id="button">Sign In</button><br><br><br>
+
+                <a href="registration.php">Don't have an account? Click to SignUp</a><br><br>
+            </form>
+            </div>
+                
+        </div>          
+</div>     
+
+
+
+
+        </div>
+                            
+        </div>
                         
 </div>
 <br>
