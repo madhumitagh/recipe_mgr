@@ -47,18 +47,18 @@
 
 
 <div>
-<h2> Welcome to Tempting Recipes! </h2>
+<h3> Welcome to Tempting Recipes! </h3>
 </div>
 <br>
 <br>
 <div class= "container">
-<p><h3> At Tempting Recipes, we believe that cooking should be a joyful and straightforward experience for everyone.</h3></p>
-<p><h3>Our online recipe manager is designed to make your culinary journey easier, more organized, and infinitely more enjoyable.</h3></p>
-<p><h3>Whether you are a beginner cook or a seasoned chef, our platform is tailored to meet your needs.</h3></p>
+<p><h4> At Tempting Recipes, we believe that cooking should be a joyful and straightforward experience for everyone.</h4></p>
+<p><h4>Our online recipe manager is designed to make your culinary journey easier, more organized, and infinitely more enjoyable.</h4></p>
+<p><h4>Whether you are a beginner cook or a seasoned chef, our platform is tailored to meet your needs.</h4></p>
 </div>
 <b>
 <br>
-<h2>Enjoy your cooking...</h2>
+<h3>Enjoy your cooking...</h3>
 
   
    
