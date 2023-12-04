@@ -30,6 +30,19 @@ if ($result_set = mysqli_query($db, $sql)) {
         $image = $result['image_path'] ;
 }
 mysqli_free_result($result_set);
+
+if (isset($_GET["like"])) {
+  $sql = "UPDATE  recipes set likes=likes+1 WHERE id= '$id' ";
+  $sql2 = "INSERT INTO likes(recipeid, user) VALUES('$id','".$_SESSION['username']."')";
+  $result_set = mysqli_query($db, $sql);
+  $result_set = mysqli_query($db, $sql2);
+}
+if (isset($_GET["dislike"])) {
+  $sql = "UPDATE  recipes set likes=likes-1 WHERE id= '$id' ";
+  $sql2 = "DELETE FROM likes WHERE recipeid='$id' and user='".$_SESSION['username']."'";
+  $result_set = mysqli_query($db, $sql);
+  $result_set = mysqli_query($db, $sql2);
+}
 ?>
 <nav> 
               <div>
@@ -90,18 +103,31 @@ mysqli_free_result($result_set);
         </dd>
       </dl>
       <br>
-    
-
-      <!-- <dl>
-        <dt>likes</dt>
-        <dd><input type="text" name="likes"  /></dd>
-      </dl> -->
-
+      <dl>
+        <dd>
+        <?php
+        $like_disabled = true;
+        $dislike_disabled = true;
+        if (isset($_SESSION["username"])) {
+          $sql = "SELECT * FROM likes WHERE recipeid='".$id."' and user='".$_SESSION['username']."'";
+          if (($result_set = mysqli_query($db, $sql)) AND mysqli_num_rows($result_set)) {
+            $like_disabled = true; 
+            $dislike_disabled = !$like_disabled;
+          } else {
+            $like_disabled = false;
+            $dislike_disabled = !$like_disabled;
+          }
+        }
+        ?>
+        <form>
+        <input type = "hidden" name = "id" value = "<?php echo $id; ?>" />
+        <input type="submit" name="like" value="Like" <?php echo $like_disabled?'disabled':''; ?>/>
+        <input type="submit" name="dislike" value="Dislike" <?php echo $dislike_disabled?'disabled':''; ?>/>
+      </form>
+        </dd>
+      </dl>
     </form>
-
-
   </div>
-
 </div><br><br>
 
 <?php include 'footer.php'; ?>

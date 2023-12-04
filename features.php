@@ -146,6 +146,7 @@ if (session_status() == PHP_SESSION_NONE) {
                   $sql=$sql . " (ingredients like '%$search%'or dietary_preferences like '%$search%' or cuisine_type like '%$search%')";
                 }
               }
+              $sql = $sql . " ORDER BY likes DESC";
               //echo $sql;
               $result_set = mysqli_query($db,$sql);
               if ($result_set AND mysqli_num_rows($result_set)>0) {
@@ -159,6 +160,7 @@ if (session_status() == PHP_SESSION_NONE) {
                   <th>Cook Time</th>
                   <th>Instruction</th>
                   <th>Image</th>
+                  <th>Likes</th>
                 </tr>
 
                 <?php
@@ -173,6 +175,7 @@ if (session_status() == PHP_SESSION_NONE) {
                       <td><?php echo $results['cook_time'] ; ?></td>
                       <td><?php echo $results['instruction'] ; ?></td>
                       <td><img src="<?php echo 'data:image;base64,'.$results['image_path'] ?>" width=10%/></td>
+                      <td><?php echo $results['likes'] . " Likes" ; ?></td>
                       <td><a class="action" href="<?php echo "displayrecipes.php?id=" . $results['id']; ?>">Display</a></td>
                       <?php
                        if (isset($_SESSION['username']) AND $results['username'] == $_SESSION['username']) {
@@ -180,7 +183,7 @@ if (session_status() == PHP_SESSION_NONE) {
                         echo "<td><a class='action' href='delete.php?id=" . $results['id']."'>Delete</a></td>";
                         } else {
                         }
-                      ?>    
+                      ?>
                   </tr>
 
             <?php }

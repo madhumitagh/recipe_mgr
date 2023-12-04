@@ -43,7 +43,7 @@ $db = db_connect();
     $image = '';
   }
  }
- $likes = 1;//$_POST['likes'] ;
+ $likes = 0;//$_POST['likes'] ;
 
   
 $sql = "INSERT INTO recipes(username,dish_name,ingredients,cuisine_type,dietary_preferences,cook_time,instruction,image_path,likes)
