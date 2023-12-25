@@ -1,92 +1,132 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('registrationForm');
-    const fullname = document.getElementById('fullname');
-    const username = document.getElementById('username');
-    const genderRadios = document.querySelectorAll('input[name="gender"]');
-    const email = document.getElementById('email');
-    const password = document.getElementById('password');
-    const confirmPassword = document.getElementById('confirm_password');
-    const phoneNumber = document.getElementById('phonenumber');
-    const errorElements = document.querySelectorAll('.error');
-             
-    function setButtonState(condition) {
-        const button = document.getElementById('button');
-        button.disabled = !condition; // If condition is true, button is enabled, else disabled
-    }   
+   const fullname = document.getElementById('fullname');
+   const username = document.getElementById('username');
+   const genderElem = document.getElementById('gender');
+   var gender = document.getElementsByName('gender');
+   const email = document.getElementById('email');
+   const password = document.getElementById('password');
+   const confirm_password = document.getElementById('confirm_password');
+   const phonenumber = document.getElementById('phonenumber');
+   const form = document.getElementById('form');
+   const ack = document.getElementById("ack");
+   var submit = document.getElementById("Submit");
 
-    form.addEventListener('submit', function(e) {
-        // Initially assume there are no errors
-        let errorOccurred = false;
+   form.addEventListener('input', (e) => {
+       e.preventDefault();
+       validateInputs();
+   });
+//    form.addEventListener('submit', (e) => {
+//         e.preventDefault();
+//         validateInputs();
+//     });
 
-        // Full name validation
-        if (!fullname.value.trim() || fullname.value.trim().split(/\s+/).length < 2) {
-            errorElements[0].innerText = 'Full name must include both first name and last name';
-            errorOccurred = true;
-        } else {
-            errorElements[0].innerText = '';
-        }
+   const setError = (element, message) => {
+       const inputControl = element.parentElement;
+       const errorDisplay = inputControl.querySelector('.error');
+       errorDisplay.style.color = "red";
+       errorDisplay.innerText = message;
+       inputControl.classList.add('error');
+       inputControl.classList.remove('success');
+       submit.disabled = true;
 
-        // Username validation
-        if (!username.value.trim()) {
-            errorElements[1].innerText = 'Username is required';
-            errorOccurred = true;
-        } else {
-            errorElements[1].innerText = '';
-        }
+   };
 
-        // Gender validation
-        if (![...genderRadios].some(radio => radio.checked)) {
-            errorElements[2].innerText = 'Gender is required';
-            errorOccurred = true;
-        } else {
-            errorElements[2].innerText = '';
-        }
+   const setSuccess = (element) => {
+       const inputControl = element.parentElement;
+       const errorDisplay = inputControl.querySelector('.error');
+       errorDisplay.innerText = '';
+       inputControl.classList.add('success');
+       inputControl.classList.remove('error');
+   };
 
-        // Email validation
-        if (!email.value.trim()) {
-            errorElements[3].innerText = 'Email is required';
-            errorOccurred = true;
-        } else if (!email.value.includes('@')) {
-            errorElements[3].innerText = 'Please enter a valid email';
-            errorOccurred = true;
-        } else {
-            errorElements[3].innerText = '';
-        }
+   const isValidEmail = (email) => {
+       const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+       return re.test(String(email).toLowerCase());
+   };
 
-        // Password validation
-        if (password.value.length <= 6) {
-            errorElements[4].innerText = 'Password must be longer than 6 characters';
-            errorOccurred = true;
-        } else if (password.value.length >= 20) {
-            errorElements[4].innerText = 'Password must be less than 20 characters';
-            errorOccurred = true;
-        } else if (password.value.toLowerCase() === 'password') {
-            errorElements[4].innerText = 'Password must be atleast 8 characters, 1 uppercase, 1 lowercase, 1 number, 1 special character';
-            errorOccurred = true;
-        } else {
-            errorElements[4].innerText = '';
-        }
+   const validateInputs = () => {
+       var error = false; 
+       var fullnameValue = fullname.value.trim();
+       var usernameValue = username.value.trim();
+       var genderValue = "";
+       var emailValue = email.value.trim();
+       var passwordValue = password.value;
+       var confirm_passwordValue = confirm_password.value;
+       var phonenumberValue = phonenumber.value.trim();
 
-        // Confirm Password validation
-        if (confirmPassword.value !== password.value) {
-            errorElements[5].innerText = 'Password does not match';
-            errorOccurred = true;
-        } else {
-            errorElements[5].innerText = '';
-        }
+       for (i = 0; i < gender.length; i++) {
+         if (gender[i].checked) {
+            genderValue = gender[i].value;
+         }
+       }
 
-        // Phone Number validation
-        // Simple validation to check if the field is not empty
-        // You can add more complex regex checks to validate phone number formats
-        if (!phoneNumber.value.trim()) {
-            errorElements[6].innerText = 'Phone number must be in the format of (---) --- ----';
-            errorOccurred = true;
-        } else {
-            errorElements[6].innerText = '';
-        
+       if (fullnameValue === '') {
+           setError(fullname, 'Full Name is required');
+           error = true;
+       } else {
+           setSuccess(fullname);
+       }
 
-     
-        }
-        
-    });
+       if (usernameValue === '') {
+           setError(username, 'Username is required');
+           error = true;
+       } else {
+           setSuccess(username);
+       }
+
+       if (genderValue === '') {
+           setError(genderElem, 'Gender is required');
+           error = true;
+       } else {
+           setSuccess(genderElem);
+       }
+
+       if (emailValue === '') {
+           setError(email, 'Email is required');
+           error = true;
+       } else if (!isValidEmail(emailValue)) {
+           setError(email, 'Provide a valid email address');
+           error = true;
+       } else {
+           setSuccess(email);
+       }
+
+       if (passwordValue === '') {
+           setError(password, 'Password is required');
+           error = true;
+       } else if (passwordValue.length < 8) {
+           setError(password, 'Password must be at least 8 characters');
+           error = true;
+       } else {
+           setSuccess(password);
+       }
+
+       if (confirm_passwordValue === '') {
+           setError(confirm_password, 'Please confirm your password');
+           error = true;
+       } else if (confirm_passwordValue != passwordValue) {
+           setError(confirm_password, "Password doesn't match!");
+           error = true;
+       } else {
+           setSuccess(confirm_password);
+       }
+
+       if (phonenumberValue === '') {
+           setError(phonenumber, 'Phone number is required');
+           error = true;
+       } else {
+           setSuccess(phonenumber);
+       }
+
+       if (!ack.checked) {
+        setError(ack, "Please Acknowledge to proceed");
+        error = true;
+       } else {
+        setSuccess(ack);
+       }
+
+       if (error == false) {
+        submit.disabled = false;
+       }
+   };
 });

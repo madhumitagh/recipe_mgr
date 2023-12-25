@@ -50,20 +50,9 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #1377e2;
 }
 
-/* Styling for the back link and registration link */
-.back-link, a {
-    color: #007bff;
-    text-decoration: none;
-    display: block; /* Make the link fill the line */
-    margin-bottom: 15px; /* Spacing below the link */
-}
-
-a:hover {
-    text-decoration: underline;
-}
 
 nav li {
   
@@ -74,7 +63,6 @@ nav li {
    nav a {
   
     text-decoration: underline;
-    font-weight: bold;
     font-size: 1em;
     color:blueviolet;
    

@@ -11,7 +11,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="CSS/registration.css">
    <!-- <link rel="stylesheet" type="text/css" href="CSS/recipe.css"> -->
-    <script src="registration.js" defer></script>
+    <script src="JS/registration.js" defer></script>
 </head>
 <body>
 <?php
@@ -43,40 +43,45 @@
     }
  }
 ?>
-        <a class="back-link" href="<?php echo 'index.php'; ?>"> Back to List</a>
+        <nav>
+        <div>
+            <a href="index.php">Home</a>
+            <a href="aboutus.php">About Us</a>
+            <a href="features.php">Features</a>
+        </div>
+        </nav>
         <br>
+        <a class="back-link" href="<?php echo 'index.php'; ?>"> Back to List</a>
         <br>
         <h2>Registration Form</h2>
         <br>
         <div class="container">
             <div class="row col-md-6 col-md-offset-3">
                 <div class="panel panel-primary">
-                    <div class="panel-heading text-center">
-                    </div>
-                    
+                    <div class="panel-heading text-center"></div>
                         <div id = "error"></div>
                         <form id="form" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
-                        <div class="panel-body">
+                            <div class="panel-body">
                                 <br>
                             <!-- Full Name -->
                                 <div>
                                 <label for="fullname">Full Name</label>
-                                <input type="text" id="fullname" name="fullname" required>
-                                <i class = 'bx bxs-user'></i>
+                                <input type="text" class="form-control" id="fullname" name="fullname" required>
+                            
                                 <div class="error"></div>
                                 </div>
                             <!-- Username -->
                                 <div>
                                 <label for="username">Username</label>
-                                <input type="text" id="username" name="username" required>
-                                <i class = 'bx bxs-user'></i>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                                
                                 <div class="error"></div>
                                 </div>
 
                             <!-- Gender -->
                                 <div>
                                 <label>Gender</label>
-                                <div id="gender">
+                                <div id="gender" class="form-control">
                                 <input type="radio" name="gender" value="male" required> Male
                                 <input type="radio" name="gender" value="female" required> Female
                                 <input type="radio" name="gender" value="other" required> Other
@@ -87,52 +92,47 @@
                             <!-- Email -->
                                 <div>
                                 <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
-                                <i class = 'bx bxs-envelope'></i>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                
                                 <div class="error"></div>
                                 </div>
 
                             <!-- Password -->
                                 <div>
                                 <label for="password">Password</label>
-                                <input type="password" id="password" name="password" required>
-                                <i class = 'bx bxs-lock-alt'></i>
+                                <input type="password" class="form-control"  id="password" name="password" required>
+                                
                                 <div class="error"></div>
                                 </div>
 
                             <!-- Confirm Password -->
                                 <div>
                                 <label for="confirm_password">Confirm Password</label>
-                                <input type="password" id="confirm_password" name="confirm_password" required>
-                                <i class = 'bx bxs-lock-alt'></i>
+                                <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
                                 <div class="error"></div>
                                 </div>
 
                             <!-- Phone Number -->
                                 <div>
                                 <label for="phonenumber">Phone Number</label>
-                                <input type="tel" id="phonenumber" name="phonenumber" required>
-                                <i class = 'bx bxs-phone'></i>
+                                <input type="tel" class="form-control" id="phonenumber" name="phonenumber" required>
                                 <div class="error"></div>
                                 </div>
-
-                        
-                            <br>
+                                <br>
                         
                             <!-- Submit Button -->
-                            <div>
-                            <input type = "checkbox" id="ack"><label id ="ackLabel">I hereby declare that the above information provided is true and correct</label>
-                            <div class="error">
+                                <div>
+                                <input type = "checkbox" id="ack"><label id ="ackLabel">I hereby declare that the above information provided is true and correct</label>
+                                <div class="error"></div>
+                                </div>
+                                <br>
+                                <input type="Submit" class="btn-primary" id="Submit">
+                                <input type="reset" value="Clear information">
+                                <br>
+                                <br>
+                                    <a href="signin.php">Already a member? Click to Sign In</a>
                             </div>
-                    </div>
-                            <br>
-                            <br>
-                            <input type="Submit" class="btn-primary" id="Submit">
-                            <input type="reset" value="Clear information">
-                            <br>
-                            <br>
                         </form>
-                                <a href="signin.php">Already a member? Click to Sign In</a>
                 </div>
             </div>
         </div>
@@ -140,3 +140,11 @@
         <br>
 </body>
 </html>
+<br>
+<br>
+
+<?php include ("footer.php"); ?>
+</body> 
+</html>
+   
+

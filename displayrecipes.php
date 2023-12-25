@@ -44,7 +44,7 @@ if (isset($_GET["dislike"])) {
   $result_set = mysqli_query($db, $sql2);
 }
 ?>
-<nav> 
+            <nav> 
               <div>
                 <a href="index.php">Home</a>
                 <a href="aboutus.php">About Us</a>
@@ -55,55 +55,55 @@ if (isset($_GET["dislike"])) {
                 } 
                 ?>
               </div>
-            </nav><br>
-    <div id="content">
-        <a class="back-link"  href="features.php"> Back to List</a>
-        <div class="Display">
-            <h1>Display Recipes</h1>
-            <form">
-        
-        <dl>
-        <dt>Name</dt>
-        <dd><input type="text" name="dish_name" readonly value ="<?php echo "$dish"; ?>"/></dd>
-        </dl>
+            </nav>
+            <br>
+          <div id="content">
+            <a class="back-link"  href="features.php"> Back to List</a>
+              <div class="Display">
+                <h2>Display Recipes</h2>
+                <form>
+                <dl>
+                <dt><b>Name<b></dt>
+                <dd><input type="text" name="dish_name" readonly value ="<?php echo "$dish"; ?>"/></dd>
+                </dl>
 
-        <dl>
-        <dt>Ingredients</dt>
-        <dd><input type="text" name="ingredients" readonly value ="<?php echo "$ingredients"; ?>"/></dd>
-        </dd>
-        </dl>
+                <dl>
+                <dt>Ingredients</dt>
+                <dd><input type="text" name="ingredients" readonly value ="<?php echo "$ingredients"; ?>"/></dd>
+                </dd>
+                </dl>
 
-        <dl>
-        <dt>Cuisine Type</dt>
-        <dd><input type="text" name="cuisine_type" readonly value ="<?php echo "$cuisine"; ?>"/></dd>
-        </dd>
-        </dl>
+                <dl>
+                <dt>Cuisine Type</dt>
+                <dd><input type="text" name="cuisine_type" readonly value ="<?php echo "$cuisine"; ?>"/></dd>
+                </dd>
+                </dl>
 
-        <dl>
-        <dt>Diet Preference</dt>
-        <dd><input type="text" name="dietary_preferences" readonly value ="<?php echo "$diet"; ?>"/></dd>
-        </dd>
-        </dl>
+                <dl>
+                <dt>Diet Preference</dt>
+                <dd><input type="text" name="dietary_preferences" readonly value ="<?php echo "$diet"; ?>"/></dd>
+                </dd>
+                </dl>
 
-        <dl>
-        <dt>Time</dt>
-        <dd><input type="text" name="cook_time" readonly value ="<?php echo "$cook"; ?>" /></dd>
-        </dd>
-        </dl>
+                <dl>
+                <dt>Time</dt>
+                <dd><input type="text" name="cook_time" readonly value ="<?php echo "$cook"; ?>" /></dd>
+                </dd>
+                </dl>
 
-        <dl>
-        <dt>Instructions</dt>
-        <dd><textarea name="instruction" rows="20" cols="40" readonly> <?php echo "$instruction"; ?> </textarea></dd>
-        </dd>
-        </dl>
+                <dl>
+                <dt>Instructions</dt>
+                <dd><textarea name="instruction" rows="20" cols="40" readonly> <?php echo "$instruction"; ?> </textarea></dd>
+                </dd>
+                </dl>
 
-      <dl>
-        <dt>Image</dt>
-        <dd><img src="<?php echo 'data:image;base64,'.$image ?>" width=50%/></dd>
-        </dd>
-      </dl>
-      <br>
-      <dl>
+                <dl>
+                <dt>Image</dt>
+                <dd><img src="<?php echo 'data:image;base64,'.$image ?>" width=50%/></dd>
+                </dd>
+                </dl>
+                <br>
+        <dl>
         <dd>
         <?php
         $like_disabled = true;
@@ -128,7 +128,9 @@ if (isset($_GET["dislike"])) {
       </dl>
     </form>
   </div>
-</div><br><br>
+</div>
+<br>
+<br>
 
 <?php include 'footer.php'; ?>
 

@@ -59,7 +59,7 @@ if ($result = mysqli_query($db, $sql)) {
 }
 
 ?>
-<nav> 
+          <nav> 
               <div>
                 <a href="index.php">Home</a>
                 <a href="aboutus.php">About Us</a>
@@ -70,84 +70,84 @@ if ($result = mysqli_query($db, $sql)) {
                 } 
                 ?>
               </div>
-            </nav><br>
+            </nav>
+            <br>
 
-<div id="content">
- <a class="back-link" href="<?php echo 'index.php'; ?>"> Back to List</a>
-  <div class="add">
-    <h1>Add Recipes</h1>
-    <form method="POST" enctype="multipart/form-data">
+            <div id="content">
+                  <a class="back-link" href="<?php echo 'index.php'; ?>"> Back to List</a>
+                    <div class="add">
+                      <h2>Add Recipes</h2>
+                        <form method="POST" enctype="multipart/form-data">
 
-      <dl>
-        <dt>Dish_name</dt>
-        <dd><input type="text" name="dish_name" /></dd>
-      </dl>
+                          <dl>
+                            <dt><b>Dish ame</b></dt>
+                            <dd><input type="text" name="dish_name" /></dd>
+                          </dl>
 
-      <dl>
-        <dt>Ingredients</dt>
-        <dd><input type="text" name="ingredients" /></dd>
-      </dl>
+                          <dl>
+                            <dt><b>Ingredients</b></dt>
+                            <dd><input type="text" name="ingredients" /></dd>
+                          </dl>
 
-      <dl>
-        <dt>Cuisine_type</dt>
-        <dd>
-          <select id = "cuisine" name="cuisine_type">
-                <option value="">--Please select an option--</option>
-                <?php
-                foreach ($g_cuisine_types as $val) {
-                  echo "<option value='$val'>$val</option>";
-                }
-                ?>
-          </select>
-        </dd>
-      </dl>
+                          <dl>
+                            <dt><b>Cuisine type</b></dt>
+                            <dd>
+                              <select id = "cuisine" name="cuisine_type">
+                                  <option value="">--Please select an option--</option>
+                                    <?php
+                                      foreach ($g_cuisine_types as $val) {
+                                        echo "<option value='$val'>$val</option>";
+                                      }
+                                    ?>
+                                </select>
+                              </dd>
+                            </dl>
 
-      <dl>
-        <dt>Dietary_preference</dt>
-        <dd>
-          <select id="diet" name="dietary_preferences">
-            <option value="">--Please choose an option--</option>
-            <?php
-                foreach ($g_diet_types as $val) {
-                  echo "<option value='$val'>$val</option>";
-                }
-              ?>
-          </select>
-        </dd>
-      </dl>
+                          <dl>
+                              <dt><b>Dietary preference</b></dt>
+                              <dd>
+                                <select id="diet" name="dietary_preferences">
+                                      <option value="">--Please choose an option--</option>
+                                        <?php
+                                          foreach ($g_diet_types as $val) {
+                                            echo "<option value='$val'>$val</option>";
+                                              }
+                                        ?>
+                                  </select>
+                              </dd>
+                          </dl>
 
-      <dl>
-        <dt>Cook_time</dt>
-        <dd><input type="text" name="cook_time" /></dd>
-      </dl>
+                            <dl>
+                              <dt><b>Cook time</b></dt>
+                              <dd><input type="text" name="cook_time" /></dd>
+                            </dl>
 
-      <dl>
-        <dt>instructions</dt>
-        <dd><textarea  name="instruction" rows="20" cols="40"> </textarea></dd>
-        </dd>
-      </dl>
+                            <dl>
+                              <dt><b>Instructions</b></dt>
+                              <dd><textarea  name="instruction" rows="20" cols="40"> </textarea></dd>
+                              </dd>
+                            </dl>
 
-      <dl>
-        <dt>image_path</dt>
-        <dd>  <input type="file" name="image" accept="image/*"></dd>
-        </dd>
-      </dl>
-      <br>
+                            <dl>
+                              <dt><b>Image path</b></dt>
+                              <dd>  <input type="file" name="image" accept="image/*"></dd>
+                              </dd>
+                            </dl>
+                            <br>
     
 
-      <!-- <dl>
-        <dt>likes</dt>
-        <dd><input type="text" name="likes"  /></dd>
-      </dl> -->
+                            <!-- <dl>
+                              <dt>likes</dt>
+                              <dd><input type="text" name="likes"  /></dd>
+                            </dl> -->
 
-      <div id="operations">
-        <input type="submit" value="Create" name="submit" />
+                                <div id="operations">
+                                      <input type="submit" value="Create" name="submit" />
+                                </div>
+                  </form>
+          </div>
       </div>
-    </form>
-
-
-  </div>
-
-</div><br><br>
+      <br>
+      <br>
 
 <?php include 'footer.php'; ?>
